@@ -1,5 +1,5 @@
 async function addUser() {
-    const username = document.getElementById("username").value;
+    const username = document.getElementById("user-name").value;
     const email = document.getElementById("email").value;
 
     // Simple validation
@@ -16,7 +16,7 @@ async function addUser() {
             },
             body: JSON.stringify({
                 username: username,
-                email: email
+                email: email,
             })
         });
 
@@ -32,7 +32,7 @@ async function addUser() {
             document.getElementById("email").value = "";
         } else {
             // Backend returned an error
-            alert("Error: " + data.message);
+            alert("Error: " + data.error);
             console.error("Backend error:", data);
         }
 
