@@ -1,9 +1,9 @@
 async function addUser() {
-    const userName = document.getElementById("user-name").value;
-    const userEmail = document.getElementById("email").value;
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
 
     // Simple validation
-    if (!userName || !userEmail) {
+    if (!username || !email) {
         alert("Please fill in both fields");
         return;
     }
@@ -15,8 +15,8 @@ async function addUser() {
                 "Content-Type": "application/json; charset=UTF-8"
             },
             body: JSON.stringify({
-                name: userName,
-                email: userEmail
+                username: username,
+                email: email
             })
         });
 
