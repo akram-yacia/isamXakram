@@ -44,7 +44,16 @@ app.post('/register', (req, res) => {
     }
 });
 
+app.get('/users', (req, res) => {
+    try {
+        const query = db.prepare('SELECT * FROM users');
+        const users = query.all(); 
+        
+        res.json(users);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
-    console.log(`Node version: ${process.version}`);
 });
