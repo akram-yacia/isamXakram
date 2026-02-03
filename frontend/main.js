@@ -9,7 +9,7 @@ async function addUser() {
     }
 
     try {
-        const response = await fetch("http://localhost:3000/api/users", {
+        const response = await fetch("http://localhost:3000/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json; charset=UTF-8"
